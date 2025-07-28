@@ -100,19 +100,26 @@ function ShoppingOrderDetailsView({ orderDetails, scrollToReview = false, onClos
               </span>
             </div>
 
-            {/* ✅ Tambahkan Tombol Chat Seller */}
-            {item?.sellerPhone && (
+          {item?.sellerPhone && (
+            <div className="flex justify-between mt-2 space-y-1">
+              <div>
+                <p className="font-light">Toko</p>
+                <p className="font-semibold text-gray-800">{item.storeName}</p>
+              </div>
+
               <a
                 href={`https://wa.me/${item.sellerPhone.replace(/^0/, "62")}?text=${encodeURIComponent(
                   `Halo ${item.storeName}, saya ingin bertanya mengenai pesanan saya dengan kode ${orderDetails?._id}.`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 inline-block w-fit px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 transition-colors"
+                className="inline-block w-fit p-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 transition-colors"
               >
-                Chat Seller via WhatsApp
+                Chat Seller
               </a>
-            )}
+            </div>
+          )}
+
           </div>
         </div>
 
